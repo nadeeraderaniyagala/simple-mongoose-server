@@ -36,7 +36,7 @@ app.post("/", async (req, res) => {
   console.log("MongoDB URI:", mongodbUri);
 
   // connect to the database and log the connection
-  mongoose
+ await mongoose
     .connect(mongodbUri,
       { useNewUrlParser: true, useUnifiedTopology: true }
     )
@@ -48,7 +48,7 @@ app.post("/", async (req, res) => {
     });
 
   // add the data to the database
-  studObj
+  await studObj
     .save()
     .then(() => console.log("Data added!"))
     .catch((err) => console.error("Error: ", err));
