@@ -37,8 +37,7 @@ app.post("/", async (req, res) => {
 
   // connect to the database and log the connection
   mongoose
-    .connect(
-      "mongodb+srv://nadeera:nadeera123@cluster0.70w69dv.mongodb.net/Winter24",
+    .connect(mongodbUri,
       { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(() => {
